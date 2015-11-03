@@ -10,5 +10,20 @@ object isort {
   }
 
   var list = List(0, -5, 1, 3, 7, 2, 10)
-  isort(list)
+  var res = isort(list)
+  res.reverse
+  "reverse function: " + reverse(res)
+
+
+  def reverse(_these: List[Int]): List[Int] = {
+    var result: List[Int] = Nil
+    var these = _these
+    while (these.nonEmpty) {
+      print((these.head :: result) + ", ")
+//      result = these.head :: result
+      result = result.::(these.head)
+      these = these.tail
+    }
+    result
+  }
 }
