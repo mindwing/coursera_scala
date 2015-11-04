@@ -52,3 +52,14 @@ val l2 = l.flatMap(identity)
 val l3 = l.flatMap(x => x)
 for (list <- l; x <- list) yield x
 for (list <- l; x <- list) yield list
+
+
+val l4 = l2.map(x => x * 10)
+
+val l5 = l2.filter(x => x < 3)
+val l6 = l2.filterNot(x => x < 3)
+val l7 = l2.partition(x => x < 3)
+
+val l8 = l2.takeWhile(x => x < 3)
+val l9 = l2.dropWhile(x => x < 3)
+val l10 = l2.span(x => x < 3)
